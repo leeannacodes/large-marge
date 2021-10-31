@@ -1,0 +1,192 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url("./large-marge-truck.jpeg");
+  background-size: cover;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+h2 {
+  font-family: "Sancreek", cursive;
+  color: white;
+}
+
+p {
+  font-family: "Permanent Marker", cursive;
+  color: white;
+}
+
+.description {
+  min-height: 20vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.button-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+}
+
+.game {
+  min-height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ui-level {
+  font-size: 3rem;
+  padding-top: 2rem;
+}
+
+.ui-message {
+  font-size: 1.5rem;
+}
+
+.level-two {
+  display: none;
+}
+
+.next-button {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  padding: 0.5rem 2.5rem;
+  background: black;
+  color: white;
+  border: none;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+  font-family: "Permanent Marker", cursive;
+}
+
+.restart-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  padding: 0.5rem 2.5rem;
+  background: black;
+  color: white;
+  border: none;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+  font-family: "Permanent Marker", cursive;
+}
+
+.large-marge {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: none;
+}
+
+@import url("https://fonts.googleapis.com/css?family=Fira+Mono:400");
+
+.you-lose-message {
+  width: 60vw;
+  height: 20vh;
+  position: fixed;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  object-fit: cover;
+  padding: 2rem 1rem;
+  background: #131313;
+  color: #fff;
+  font-size: 50px;
+  font-family: "Fira Mono", monospace;
+  letter-spacing: -7px;
+  animation: glitch 0.55s linear infinite;
+}
+
+@keyframes glitch {
+  2%,
+  64% {
+    transform: translate(2px, 0) skew(0deg);
+  }
+  4%,
+  60% {
+    transform: translate(-2px, 0) skew(0deg);
+  }
+  62% {
+    transform: translate(0, 0) skew(5deg);
+  }
+}
+
+div:before,
+div:after {
+  content: attr(title);
+  position: absolute;
+  left: 0;
+}
+
+div:before {
+  animation: glitchTop 1s linear infinite;
+  clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+}
+
+@keyframes glitchTop {
+  2%,
+  64% {
+    transform: translate(2px, -2px);
+  }
+  4%,
+  60% {
+    transform: translate(-2px, 2px);
+  }
+  62% {
+    transform: translate(13px, -1px) skew(-13deg);
+  }
+}
+
+div:after {
+  animation: glitchBotom 1.5s linear infinite;
+  clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+  -webkit-clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+}
+
+@keyframes glitchBotom {
+  2%,
+  64% {
+    transform: translate(-2px, 0);
+  }
+  4%,
+  60% {
+    transform: translate(-2px, 0);
+  }
+  62% {
+    transform: translate(-22px, 5px) skew(21deg);
+  }
+}
+
+.large-marge-disapproves {
+  position: absolute;
+  width: 50vw;
+  height: 50vh;
+  object-fit: cover;
+  animation: glitch 0.5s linear infinite;
+}
+
+/* font-family: 'Permanent Marker', cursive;
+font-family: 'Sancreek', cursive; */
